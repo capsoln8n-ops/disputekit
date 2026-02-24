@@ -1,12 +1,26 @@
 import Stripe from 'stripe'
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('STRIPE_SECRET_KEY is not set')
+let stripeInstance: Stripe | null = null
+
+function getStripe(): Stripe {
+  if (!process.env.STRIPE_SECRET_KEY) {
+    throw new Error('STRIPE_SECRET_KEY is not set')
+  }
+  
+  if (!stripeInstance) {
+    stripeInstance = new Stripe(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: '2026-01-28.clover',
+    })
+  }
+  
+  return stripeInstance
 }
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: '2024-12-18.acacia',
-})
+export const stripe = {
+  get get() {
+    return getStripe()
+  }
+}
 
 export function getStripeOAuthUrl(): string {
   const clientId = process.env.NEXT_PUBLIC_STRIPE_CLIENT_ID
@@ -16,6 +30,7 @@ export function getStripeOAuthUrl(): string {
 }
 
 export async function exchangeCodeForToken(code: string) {
+  const stripe = getStripe()
   const response = await stripe.oauth.token({
     grant_type: 'authorization_code',
     code,
@@ -25,6 +40,7 @@ export async function exchangeCodeForToken(code: string) {
 }
 
 export async function refreshToken(refreshToken: string) {
+  const stripe = getStripe()
   const response = await stripe.oauth.token({
     grant_type: 'refresh_token',
     refresh_token: refreshToken,

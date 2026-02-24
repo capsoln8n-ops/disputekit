@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase'
+import { createClient } from '@/lib/supabase-client'
 import { fetchDisputesFromStripe, getDecryptedToken } from '@/lib/stripe-sync'
 
 export async function POST(request: NextRequest) {

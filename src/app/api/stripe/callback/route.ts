@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase'
+import { createClient } from '@/lib/supabase-client'
 import { exchangeCodeForToken } from '@/lib/stripe'
 import crypto from 'crypto'
 
@@ -44,7 +44,14 @@ export async function GET(request: NextRequest) {
     const stripeAccountId = response.stripe_user_id
     const accessToken = response.access_token
     const refreshToken = response.refresh_token
-    const expiresIn = response.expires_in
+    
+    if (!accessToken || !refreshToken) {
+      return NextResponse.redirect(new URL('/dashboard?error=Failed to get access token', request.url))
+    }
+    
+    // Stripe OAuth tokens typically expire in 1 hour (3600 seconds)
+    // The expires_in property may not be available in all cases
+    const expiresIn = 3600 
 
     // Calculate token expiry
     const tokenExpiresAt = new Date(Date.now() + expiresIn * 1000)

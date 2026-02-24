@@ -1,11 +1,9 @@
 import { redirect } from 'next/navigation'
-import { createServerClientWithCookies } from '@/lib/supabase'
-import { cookies } from 'next/headers'
+import { createServerClientWithCookies } from '@/lib/supabase-server'
 import Link from 'next/link'
 
 export default async function Dashboard() {
-  const cookieStore = await cookies()
-  const supabase = createServerClientWithCookies(cookieStore)
+  const supabase = await createServerClientWithCookies()
 
   const { data: { user } } = await supabase.auth.getUser()
 

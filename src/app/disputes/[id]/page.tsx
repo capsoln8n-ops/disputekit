@@ -1,40 +1,10 @@
 import { redirect } from 'next/navigation'
-import { createServerClientWithCookies } from '@/lib/supabase'
-import { cookies } from 'next/headers'
+import { createServerClientWithCookies } from '@/lib/supabase-server'
 import Link from 'next/link'
-
-async function getDispute(id: string, userId: string) {
-  const cookieStore = await cookies()
-  const supabase = createServerClientWithCookies(cookieStore)
-  
-  const { data } = await supabase
-    .from('disputes')
-    .select('*')
-    .eq('id', id)
-    .eq('user_id', userId)
-    .single()
-  
-  return data
-}
-
-async function getEvidence(disputeId: string, userId: string) {
-  const cookieStore = await cookies()
-  const supabase = createServerClientWithCookies(cookieStore)
-  
-  const { data } = await supabase
-    .from('evidence')
-    .select('*')
-    .eq('dispute_id', disputeId)
-    .eq('user_id', userId)
-    .order('created_at', { ascending: false })
-  
-  return data
-}
 
 export default async function DisputeDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
-  const cookieStore = await cookies()
-  const supabase = createServerClientWithCookies(cookieStore)
+  const supabase = await createServerClientWithCookies()
 
   const { data: { user } } = await supabase.auth.getUser()
 
@@ -42,13 +12,23 @@ export default async function DisputeDetail({ params }: { params: Promise<{ id: 
     redirect('/login')
   }
 
-  const dispute = await getDispute(id, user.id)
+  const { data: dispute } = await supabase
+    .from('disputes')
+    .select('*')
+    .eq('id', id)
+    .eq('user_id', user.id)
+    .single()
   
   if (!dispute) {
     redirect('/dashboard')
   }
 
-  const evidence = await getEvidence(id, user.id)
+  const { data: evidence } = await supabase
+    .from('evidence')
+    .select('*')
+    .eq('dispute_id', id)
+    .eq('user_id', user.id)
+    .order('created_at', { ascending: false })
 
   const reasonDescriptions: Record<string, string> = {
     'duplicate': 'The customer claims this charge was duplicated',

@@ -1,3 +1,4 @@
+import crypto from 'crypto'
 import Stripe from 'stripe'
 
 const ENCRYPTION_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY?.slice(0, 32) || 'default-key-change-in-production'
@@ -22,7 +23,7 @@ export function getDecryptedToken(encryptedToken: string): string {
 
 export async function createStripeClientWithAccount(accountId: string, accessToken: string): Promise<Stripe> {
   return new Stripe(accessToken, {
-    apiVersion: '2024-12-18.acacia',
+    apiVersion: '2026-01-28.clover',
   })
 }
 

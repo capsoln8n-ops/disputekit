@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import Link from 'next/link'
-import { createClient } from '@/lib/supabase'
+import { createClient } from '@/lib/supabase-client'
 
 export default function GenerateResponse() {
   const [dispute, setDispute] = useState<any>(null)
