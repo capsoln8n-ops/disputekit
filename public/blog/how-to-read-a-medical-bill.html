@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Read a Medical Bill: A Complete Breakdown | BillFight AI</title>
+    <meta name="description" content="Medical bills are confusing by design. Learn how to read and understand every section of your medical bill, from CPT codes to insurance adjustments.">
+    <link rel="canonical" href="https://billfight.vercel.app/blog/how-to-read-a-medical-bill">
+    <meta property="og:title" content="How to Read a Medical Bill: A Complete Breakdown | BillFight AI">
+    <meta property="og:description" content="Medical bills are confusing by design. Learn how to read and understand every section of your medical bill, from CPT codes to insurance adjustments.">
+    <meta property="og:url" content="https://billfight.vercel.app/blog/how-to-read-a-medical-bill">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BillFight AI">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Read a Medical Bill: A Complete Breakdown">
+    <meta name="twitter:description" content="Medical bills are confusing by design. Learn how to read and understand every section of your medical bill, from CPT codes to insurance adjustments.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; line-height: 1.7; background: #fff; }
+        nav { background: #1a1a2e; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        nav a { color: #fff; text-decoration: none; font-weight: 600; }
+        nav .logo { font-size: 1.2rem; }
+        nav .cta { background: #e74c3c; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.9rem; }
+        nav .cta:hover { background: #c0392b; }
+        nav .links { display: flex; gap: 1.5rem; align-items: center; }
+        nav .links a { font-weight: 400; font-size: 0.9rem; }
+        .breadcrumb { max-width: 780px; margin: 1.5rem auto 0; padding: 0 1.5rem; font-size: 0.85rem; color: #666; }
+        .breadcrumb a { color: #2980b9; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        article { max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+        article h1 { font-size: 2.2rem; line-height: 1.25; margin-bottom: 1rem; color: #1a1a2e; }
+        article .meta { color: #666; font-size: 0.9rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e0e0e0; }
+        article h2 { font-size: 1.5rem; margin: 2.5rem 0 1rem; color: #1a1a2e; }
+        article h3 { font-size: 1.2rem; margin: 2rem 0 0.8rem; color: #2c3e50; }
+        article p { margin-bottom: 1.2rem; font-size: 1.05rem; }
+        article ul, article ol { margin: 1rem 0 1.5rem 1.5rem; }
+        article li { margin-bottom: 0.6rem; font-size: 1.05rem; }
+        article strong { color: #1a1a2e; }
+        article blockquote { border-left: 4px solid #2980b9; padding: 1rem 1.5rem; margin: 1.5rem 0; background: #f0f7ff; border-radius: 0 8px 8px 0; font-style: italic; }
+        .cta-box { background: linear-gradient(135deg, #1a1a2e 0%, #2c3e50 100%); color: #fff; padding: 2rem; border-radius: 12px; margin: 2.5rem 0; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 0.8rem; font-size: 1.4rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.2rem; }
+        .cta-box a { display: inline-block; background: #27ae60; color: #fff; padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; }
+        .cta-box a:hover { background: #219a52; }
+        .key-takeaway { background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+        .key-takeaway h4 { color: #2980b9; margin-bottom: 0.5rem; }
+        .stat-highlight { background: #fff3cd; padding: 1rem 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #f0ad4e; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        th, td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid #e0e0e0; font-size: 0.95rem; }
+        th { background: #f8f9fa; font-weight: 600; }
+        .related-posts { margin: 3rem 0 2rem; padding-top: 2rem; border-top: 1px solid #e0e0e0; }
+        .related-posts h3 { margin-bottom: 1rem; }
+        .related-posts ul { list-style: none; margin-left: 0; }
+        .related-posts li { margin-bottom: 0.5rem; }
+        .related-posts a { color: #2980b9; text-decoration: none; font-size: 1rem; }
+        .related-posts a:hover { text-decoration: underline; }
+        footer { background: #1a1a2e; color: #999; text-align: center; padding: 2rem; font-size: 0.85rem; }
+        footer a { color: #2980b9; text-decoration: none; }
+        @media (max-width: 600px) {
+            article h1 { font-size: 1.6rem; }
+            nav .links { display: none; }
+        }
+    </style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Read a Medical Bill: A Complete Breakdown", "description": "Medical bills are confusing by design. Learn how to read and understand every section of your medical bill, from CPT codes to insurance adjustments.", "author": {"@type": "Organization", "name": "BillFight AI"}, "publisher": {"@type": "Organization", "name": "BillFight AI"}, "datePublished": "2026-03-09", "dateModified": "2026-03-09", "url": "https://billfight.vercel.app/blog/how-to-read-a-medical-bill"}</script>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo">BF BillFight AI</a>
+        <div class="links">
+            <a href="/blog/">Blog</a>
+            <a href="/#how-it-works">How It Works</a>
+            <a href="/#pricing">Pricing</a>
+            <a href="/" class="cta">Generate Appeal Letter</a>
+        </div>
+    </nav>
+    <div class="breadcrumb">
+        <a href="/">Home</a> &raquo; <a href="/blog/">Blog</a> &raquo; How to Read a Medical Bill: A Complete Breakdown
+    </div>
+    <article>
+        <h1>How to Read a Medical Bill: A Complete Breakdown</h1>
+        <div class="meta">Published 2026-03-09 &middot; 7 min read &middot; By BillFight AI Team</div>
+        
+<p>Medical bills are notoriously confusing. They're filled with codes, abbreviations, and charges that seem designed to be incomprehensible. But understanding your bill is the first step to spotting errors and fighting overcharges.</p>
+
+<h2>Summary Statement vs. Itemized Bill</h2>
+<p>Most hospitals initially send a <strong>summary statement</strong> that shows a total amount due with very little detail. This is not enough information to verify accuracy. What you need is an <strong>itemized bill</strong> — a line-by-line breakdown of every charge. You have the legal right to request one.</p>
+
+<h2>Key Sections of a Medical Bill</h2>
+
+<h3>Patient Information</h3>
+<p>Your name, date of birth, account number, and insurance information. Verify every detail — errors here can cause claim denials. Even a wrong digit in your insurance ID can result in you being billed the full amount.</p>
+
+<h3>Service Dates</h3>
+<p>The date(s) you received care. Check that these match your actual visits. Charges for dates you weren't at the facility are a red flag.</p>
+
+<h3>CPT Codes (Procedure Codes)</h3>
+<p>Current Procedural Terminology codes describe what was done. Every test, procedure, consultation, and service has a unique CPT code. For example, 99213 is a standard office visit, 99283 is a mid-level ER visit, and 36415 is a routine blood draw. These codes determine what you're charged.</p>
+
+<h3>ICD-10 Codes (Diagnosis Codes)</h3>
+<p>International Classification of Diseases codes describe why the service was needed. The diagnosis code must support the procedure code — if they don't match, insurance may deny the claim.</p>
+
+<h3>Charges</h3>
+<p>The provider's "list price" for each service. These are often dramatically higher than what insurance actually pays. Don't panic at the total charges — focus on what your insurance has applied and what your actual patient responsibility is.</p>
+
+<h3>Insurance Adjustments</h3>
+<p>The difference between what the provider charges and what your insurance has agreed to pay. If your provider is in-network, they've agreed to accept the insurance company's "allowed amount," which is typically 40-60% less than list price.</p>
+
+<h3>Insurance Payment</h3>
+<p>What your insurance company actually paid toward the bill. This comes after adjustments and is the amount the insurer sends directly to the provider.</p>
+
+<h3>Patient Responsibility</h3>
+<p>What you owe after insurance adjustments and payments. This is your actual bill. It includes your deductible (if not yet met), copay (fixed amount per visit), and coinsurance (your percentage of the allowed amount).</p>
+
+<div class="key-takeaway">
+<h4>Key Takeaway</h4>
+<p>The number that matters is "Patient Responsibility" — not the total charges. Always wait for your insurance to process the claim before paying anything. If the patient responsibility amount seems wrong, compare it to your Explanation of Benefits (EOB) from your insurer.</p>
+</div>
+
+<h2>Understanding Your EOB</h2>
+<p>Your Explanation of Benefits is not a bill — it's a statement from your insurance company showing how they processed your claim. It shows the billed amount, the allowed amount, what insurance paid, and what you owe. Always compare your EOB to the provider's bill. If the "patient responsibility" numbers don't match, something is wrong.</p>
+
+<h2>Red Flags to Watch For</h2>
+<ul>
+<li>Charges for dates you weren't treated</li>
+<li>Services you don't recognize or remember receiving</li>
+<li>The same charge appearing twice</li>
+<li>An ER visit level higher than what you experienced</li>
+<li>A "patient responsibility" amount higher than what your EOB shows</li>
+</ul>
+
+        <div class="cta-box">
+            <h3>Stop Paying Unfair Medical Bills</h3>
+            <p>Generate a professional, legally-grounded appeal letter in minutes. State-specific citations included.</p>
+            <a href="/">Generate My Appeal Letter &mdash; $29</a>
+        </div>
+        <div class="related-posts">
+            <h3>Related Articles</h3>
+            <ul>
+                <li><a href="/blog/how-to-dispute-a-medical-bill">How to Dispute a Medical Bill: Complete Step-by-Step Guide (2026)</a></li>
+<li><a href="/blog/medical-bill-appeal-letter-template">Medical Bill Appeal Letter Template (Free Sample + Tips)</a></li>
+<li><a href="/blog/surprise-medical-bill-rights">Surprise Medical Bill? Know Your Rights and How to Fight Back</a></li>
+<li><a href="/blog/no-surprises-act-explained">The No Surprises Act Explained: What It Covers and How to Use It</a></li>
+            </ul>
+        </div>
+    </article>
+    <footer>
+        <p>&copy; 2026 BillFight AI. All rights reserved. Not legal advice.</p>
+        <p><a href="/">Home</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/#pricing">Pricing</a></p>
+    </footer>
+</body>
+</html>
